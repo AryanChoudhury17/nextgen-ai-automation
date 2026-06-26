@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ArrowRight, Sparkles } from 'lucide-react'
+import AIWorkflowGenerator from './components/AIWorkflowGenerator'
 import './App.css'
 
 // Multi-dimensional configuration matrix for pricing
@@ -381,31 +382,7 @@ function App() {
           </div>
         </motion.section>
 
-        <motion.section
-          className="stats-section"
-          variants={motionVariants.staggerChildren}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.2 }}
-        >
-          <div className="stats-grid">
-            <motion.div className="stat-card" variants={motionVariants.fadeLeft} whileHover={{ y: -4 }}>
-              <div className="stat-title">Active Pipelines</div>
-              <div className="stat-value">{stats.pipelines}+</div>
-              <div className="stat-note">Built with zero friction orchestration.</div>
-            </motion.div>
-            <motion.div className="stat-card" variants={motionVariants.fadeUp} whileHover={{ y: -4 }}>
-              <div className="stat-title">Global Queries</div>
-              <div className="stat-value">{stats.queries}M+</div>
-              <div className="stat-note">Hybrid vector search across all datasets.</div>
-            </motion.div>
-            <motion.div className="stat-card" variants={motionVariants.fadeRight} whileHover={{ y: -4 }}>
-              <div className="stat-title">Workflow Velocity</div>
-              <div className="stat-value">{stats.velocity}x</div>
-              <div className="stat-note">Optimized throughput for enterprise teams.</div>
-            </motion.div>
-          </div>
-        </motion.section>
+        <AIWorkflowGenerator />
 
         <motion.section
           className="section-wrap pricing-section"
@@ -487,6 +464,32 @@ function App() {
               <button type="button" className="btn-secondary pricing-action">Contact Enterprise</button>
             </motion.article>
           </motion.div>
+        </motion.section>
+
+        <motion.section
+          className="stats-section"
+          variants={motionVariants.staggerChildren}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.2 }}
+        >
+          <div className="stats-grid">
+            <motion.div className="stat-card" variants={motionVariants.fadeLeft} whileHover={{ y: -4 }}>
+              <div className="stat-title">Active Pipelines</div>
+              <div className="stat-value">{stats.pipelines}+</div>
+              <div className="stat-note">Built with zero friction orchestration.</div>
+            </motion.div>
+            <motion.div className="stat-card" variants={motionVariants.fadeUp} whileHover={{ y: -4 }}>
+              <div className="stat-title">Global Queries</div>
+              <div className="stat-value">{stats.queries}M+</div>
+              <div className="stat-note">Hybrid vector search across all datasets.</div>
+            </motion.div>
+            <motion.div className="stat-card" variants={motionVariants.fadeRight} whileHover={{ y: -4 }}>
+              <div className="stat-title">Workflow Velocity</div>
+              <div className="stat-value">{stats.velocity}x</div>
+              <div className="stat-note">Optimized throughput for enterprise teams.</div>
+            </motion.div>
+          </div>
         </motion.section>
 
         <motion.section

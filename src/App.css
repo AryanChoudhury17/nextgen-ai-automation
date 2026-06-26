@@ -880,6 +880,425 @@ body.menu-open {
   margin-top: 24px;
 }
 
+.ai-workflow-section {
+  width: min(1200px, 100%);
+  margin: 0 auto;
+  padding: 80px 24px;
+  position: relative;
+}
+
+.workflow-shell {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 30px;
+  align-items: stretch;
+}
+
+.workflow-panel {
+  border-radius: 28px;
+  background: rgba(15, 15, 22, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(24px);
+  box-shadow: 0 32px 120px rgba(0, 0, 0, 0.22);
+  padding: 30px;
+  overflow: hidden;
+}
+
+.workflow-input-panel {
+  display: grid;
+  gap: 24px;
+}
+
+.preview-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.workflow-preview-card {
+  min-height: 440px;
+  padding: 28px;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow: hidden;
+}
+
+.canvas-controls {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.canvas-scale-label,
+.canvas-scale-value {
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.zoom-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.zoom-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 160ms ease, background 160ms ease;
+}
+
+.zoom-btn:hover,
+.zoom-btn:focus-visible {
+  transform: scale(1.02);
+  background: rgba(139, 92, 246, 0.16);
+}
+
+.workflow-canvas-shell {
+  width: 100%;
+  overflow: auto;
+  padding: 6px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.workflow-canvas-wrapper {
+  min-width: 100%;
+  min-height: 300px;
+}
+
+.workflow-canvas {
+  display: grid;
+  gap: 18px;
+  width: fit-content;
+  padding: 20px;
+  transform-origin: top left;
+}
+
+.workflow-step {
+  display: grid;
+  gap: 14px;
+  align-items: center;
+}
+
+.workflow-node {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 20px;
+  border-radius: 20px;
+  background: rgba(17, 17, 22, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 22px 80px rgba(0, 0, 0, 0.22);
+  cursor: grab;
+  user-select: none;
+}
+
+.workflow-node:active {
+  cursor: grabbing;
+}
+
+.workflow-node-icon {
+  width: 50px;
+  height: 50px;
+  display: grid;
+  place-items: center;
+  border-radius: 18px;
+  background: linear-gradient(180deg, rgba(139, 92, 246, 0.24), rgba(79, 70, 229, 0.16));
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+.workflow-node-content {
+  width: 100%;
+}
+
+.workflow-node-label {
+  width: 100%;
+  text-align: left;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.workflow-node-edit-input {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 16px;
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  font-size: 1rem;
+}
+
+.workflow-node-edit-input:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.16);
+}
+
+.workflow-empty-state {
+  color: var(--text-secondary);
+  text-align: center;
+  font-size: 1rem;
+  line-height: 1.9;
+  max-width: 380px;
+}
+
+.panel-title {
+  display: block;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--accent-purple);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.panel-subtitle {
+  color: var(--text-secondary);
+  line-height: 1.85;
+  font-size: 1rem;
+}
+
+.workflow-textarea {
+  width: 100%;
+  min-height: 240px;
+  border-radius: 24px;
+  padding: 22px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+  font-size: 1rem;
+  line-height: 1.75;
+  resize: vertical;
+  transition: border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.workflow-textarea:focus-visible {
+  outline: none;
+  border-color: rgba(139, 92, 246, 0.4);
+  box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.12);
+}
+
+.prompt-chip-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.prompt-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 16px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease, color 180ms ease;
+}
+
+.prompt-chip:hover,
+.prompt-chip:focus-visible,
+.prompt-chip.active {
+  transform: translateY(-1px);
+  border-color: rgba(139, 92, 246, 0.4);
+  background: rgba(139, 92, 246, 0.14);
+  color: #fff;
+}
+
+.cta-row {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.workflow-generate-btn {
+  min-width: 220px;
+}
+
+.workflow-hint {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.workflow-status {
+  display: grid;
+  gap: 14px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-bar::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  width: 0;
+  background: linear-gradient(90deg, rgba(139, 92, 246, 0.9), rgba(79, 70, 229, 0.9));
+  transition: width 2s ease;
+}
+
+.progress-bar.active::before {
+  width: 100%;
+}
+
+.typing-label {
+  color: var(--text-secondary);
+  font-size: 0.96rem;
+}
+
+.badge-glow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: rgba(139, 92, 246, 0.14);
+  color: #fff;
+  font-size: 0.92rem;
+  border: 1px solid rgba(139, 92, 246, 0.24);
+}
+
+.workflow-visualizer {
+  display: grid;
+  gap: 18px;
+  width: 100%;
+}
+
+.workflow-step {
+  display: grid;
+  gap: 12px;
+  align-items: center;
+}
+
+.workflow-node {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 20px;
+  border-radius: 20px;
+  background: rgba(17, 17, 22, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 22px 80px rgba(0, 0, 0, 0.22);
+}
+
+.workflow-node-icon {
+  width: 50px;
+  height: 50px;
+  display: grid;
+  place-items: center;
+  border-radius: 18px;
+  background: linear-gradient(180deg, rgba(139, 92, 246, 0.24), rgba(79, 70, 229, 0.16));
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+.workflow-node-content span {
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.workflow-arrow {
+  display: flex;
+  justify-content: center;
+}
+
+.workflow-arrow span {
+  width: 6px;
+  height: 46px;
+  background: linear-gradient(180deg, rgba(139, 92, 246, 0.8), rgba(255, 255, 255, 0.08));
+  border-radius: 999px;
+  position: relative;
+}
+
+.workflow-arrow span::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(139, 92, 246, 0.95);
+  box-shadow: 0 0 14px rgba(139, 92, 246, 0.35);
+}
+
+@media (max-width: 980px) {
+  .workflow-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .prompt-chip-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .ai-workflow-section {
+    padding: 60px 18px;
+  }
+
+  .workflow-panel {
+    padding: 24px;
+  }
+
+  .prompt-chip-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .workflow-preview-card {
+    min-height: 320px;
+  }
+
+  .workflow-node {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+
+  .workflow-node-icon {
+    margin: 0 auto;
+  }
+
+  .workflow-arrow span {
+    width: 4px;
+    height: 38px;
+  }
+}
+
 .dot {
   width: 12px;
   height: 12px;
