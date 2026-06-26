@@ -9,6 +9,7 @@ A modern AI-powered workflow automation platform built with **React**, **Vite**,
 ## ✨ Features
 
 * 🎨 Modern SaaS-inspired UI
+* 🤖 AI Workflow Generator
 * 📱 Fully Responsive Design
 * ⚡ Built with React + Vite
 * 🎭 Smooth Animations & Micro-interactions
@@ -16,6 +17,14 @@ A modern AI-powered workflow automation platform built with **React**, **Vite**,
 * 🧩 Modular Component Architecture
 * 🚀 Fast Performance
 * ☁️ Deployed on Vercel
+
+## 💡 Why NextGen AI Automation?
+
+Many businesses spend time on repetitive tasks such as document processing,
+email management, reporting, and approvals.
+
+NextGen AI Automation explores how AI-powered workflows can simplify these
+processes through an intuitive and modern web interface.
 
 ## 🛠️ Tech Stack
 
