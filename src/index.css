@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   /* HSL Tailored Dark Theme Palette */
   --bg-primary: #0a0a0c;
